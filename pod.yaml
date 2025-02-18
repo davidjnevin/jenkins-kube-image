@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: echo-server-pod
+spec:
+  containers:
+    - name: echo-server
+      image: ealen/echo-server:latest
+      ports:
+        - containerPort: 3333
+          protocol: TCP
+      env:
+        - name: ENABLE__ENVIRONMENT
+          value: "false"
